@@ -1,7 +1,5 @@
 # Flashcard CLI - CSA311 HW1
-
-Interactive command-line flashcard study system built with Java and Maven.
-
+Бие даалт хийж гүйцэтгэв.
 ## Usage
 
 ```
