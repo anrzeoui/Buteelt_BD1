@@ -1,27 +1,19 @@
 package flashcard;
 
+import java.io.IOException;
+import java.util.List;
+
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
+
 import flashcard.model.FlashCard;
 import flashcard.organizer.CardOrganizer;
 import flashcard.organizer.RandomSorter;
 import flashcard.organizer.RecentMistakesFirstSorter;
 import flashcard.organizer.WorstFirstSorter;
-import java.io.IOException;
-import java.util.List;
 
-/**
- * Main entry point for the flashcard CLI application.
- *
- * <p>Usage: flashcard &lt;cards-file&gt; [options]
- */
 public class Main {
 
-    /**
-     * Application entry point.
-     *
-     * @param args command-line arguments
-     */
     public static void main(String[] args) {
         CliArgs cliArgs = new CliArgs();
         JCommander jc = JCommander.newBuilder()
@@ -48,7 +40,6 @@ public class Main {
             System.exit(1);
         }
 
-        // Validate order option
         String order = cliArgs.getOrder();
         if (!order.equals("random") && !order.equals("worst-first") && !order.equals("recent-mistakes-first")) {
             System.err.println("Error: Invalid order '" + order + "'.");
@@ -56,13 +47,11 @@ public class Main {
             System.exit(1);
         }
 
-        // Validate repetitions
         if (cliArgs.getRepetitions() < 1) {
             System.err.println("Error: --repetitions must be at least 1.");
             System.exit(1);
         }
 
-        // Load cards
         CardLoader loader = new CardLoader();
         List<FlashCard> cards;
         try {
@@ -79,10 +68,9 @@ public class Main {
 
         System.out.println("Loaded " + cards.size() + " cards from '" + cliArgs.getCardsFile() + "'");
 
-        // Select organizer
+
         CardOrganizer organizer = createOrganizer(order);
 
-        // Run session
         StudySession session = new StudySession(
             cards,
             organizer,

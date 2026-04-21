@@ -1,13 +1,11 @@
 package flashcard.organizer;
 
-import flashcard.model.FlashCard;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Organizer that sorts cards by most incorrect answers first (worst performance first).
- */
+import flashcard.model.FlashCard;
+
 public class WorstFirstSorter implements CardOrganizer {
 
     @Override

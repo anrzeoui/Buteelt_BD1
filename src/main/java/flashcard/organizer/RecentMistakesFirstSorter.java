@@ -1,13 +1,10 @@
 package flashcard.organizer;
 
-import flashcard.model.FlashCard;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Organizer that places cards answered incorrectly in the previous round at the front.
- * The relative order within each group (wrong and correct) is preserved.
- */
+import flashcard.model.FlashCard;
+
 public class RecentMistakesFirstSorter implements CardOrganizer {
 
     @Override

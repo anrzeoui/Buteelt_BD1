@@ -1,13 +1,11 @@
 package flashcard.organizer;
 
-import flashcard.model.FlashCard;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Organizer that shuffles cards in random order.
- */
+import flashcard.model.FlashCard;
+
 public class RandomSorter implements CardOrganizer {
 
     @Override

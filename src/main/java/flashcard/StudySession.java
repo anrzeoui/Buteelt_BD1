@@ -1,17 +1,15 @@
 package flashcard;
 
-import flashcard.achievement.AchievementTracker;
-import flashcard.model.FlashCard;
-import flashcard.organizer.CardOrganizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-/**
- * Drives an interactive flashcard study session.
- */
+import flashcard.achievement.AchievementTracker;
+import flashcard.model.FlashCard;
+import flashcard.organizer.CardOrganizer;
+
 public class StudySession {
 
     private final List<FlashCard> allCards;
@@ -21,14 +19,6 @@ public class StudySession {
     private final AchievementTracker achievementTracker;
     private final Scanner scanner;
 
-    /**
-     * Creates a new study session.
-     *
-     * @param allCards           list of all flashcards
-     * @param organizer          card organizer to use
-     * @param requiredRepetitions number of correct answers required per card
-     * @param invertCards        whether to swap question and answer
-     */
     public StudySession(
             List<FlashCard> allCards,
             CardOrganizer organizer,
@@ -42,22 +32,18 @@ public class StudySession {
         this.scanner = new Scanner(System.in);
     }
 
-    /**
-     * Runs the study session until all cards meet the repetition requirement.
-     */
     public void run() {
         Map<FlashCard, Integer> correctCounts = new HashMap<>();
         for (FlashCard card : allCards) {
             correctCounts.put(card, 0);
         }
 
-        System.out.println("**************************");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println(" Welcome to Flashcard CLI!");
-        System.out.println("**************************");
+        
         System.out.println("Cards: " + allCards.size() + " | Required correct answers: " + requiredRepetitions);
         System.out.println("Type your answer and press Enter. Type 'quit' to exit.\n");
 
-        // Reset round flags
         for (FlashCard card : allCards) {
             card.resetRoundFlag();
         }
@@ -74,7 +60,6 @@ public class StudySession {
             long roundStartTime = System.currentTimeMillis();
             int roundCorrect = 0;
 
-            // Reset round flags before each round
             for (FlashCard card : allCards) {
                 card.resetRoundFlag();
             }

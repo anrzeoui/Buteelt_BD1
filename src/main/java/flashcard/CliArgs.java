@@ -2,9 +2,6 @@ package flashcard;
 
 import com.beust.jcommander.Parameter;
 
-/**
- * Command-line argument definitions for the flashcard application.
- */
 public class CliArgs {
 
     @Parameter(description = "<cards-file>")

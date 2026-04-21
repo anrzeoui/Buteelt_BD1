@@ -1,35 +1,17 @@
 package flashcard;
 
-import flashcard.model.FlashCard;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Utility class for loading flashcards from a text file.
- *
- * <p>File format:
- * <pre>
- * # This is a comment
- * Question 1 | Answer 1
- * Question 2 | Answer 2
- * </pre>
- * Lines starting with '#' are ignored. Each card line must contain '|' as separator.
- */
+import flashcard.model.FlashCard;
+
 public class CardLoader {
 
     private static final String SEPARATOR = "|";
 
-    /**
-     * Loads flashcards from the specified file path.
-     *
-     * @param filePath path to the cards file
-     * @return list of loaded flashcards
-     * @throws IOException if the file cannot be read
-     * @throws IllegalArgumentException if the file format is invalid
-     */
     public List<FlashCard> loadCards(String filePath) throws IOException {
         List<FlashCard> cards = new ArrayList<>();
 
