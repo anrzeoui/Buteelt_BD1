@@ -1,0 +1,19 @@
+# Sample flashcards file for CSA311 HW1
+# Format: Question | Answer
+
+# Java basics
+What is a variable? | A named storage location for data
+What does OOP stand for? | Object-Oriented Programming
+What is a class in Java? | A blueprint for creating objects
+What is an interface? | A contract defining method signatures
+
+# Data structures
+What is a List? | An ordered collection of elements
+What is a Map? | A collection of key-value pairs
+What is a Stack? | A LIFO (Last In First Out) data structure
+What is a Queue? | A FIFO (First In First Out) data structure
+
+# Algorithms
+What is O(n) complexity? | Linear time complexity
+What is O(1) complexity? | Constant time complexity
+What sorting algorithm is O(n log n)? | Merge Sort
