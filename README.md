@@ -13,12 +13,13 @@ Options:
   --invertCards                 Swap question and answer sides (default: false)
 ```
 ## Commands 
+```
 java -jar target/flashcard-1.0-SNAPSHOT.jar sample_cards.txt -> Үндсэн горимоор ажиллана.
 java -jar target/flashcard-1.0-SNAPSHOT.jar sample_cards.txt --order worst-first -> Worst first дараалал ажиллана.
 java -jar target/flashcard-1.0-SNAPSHOT.jar sample_cards.txt --invertCards -> Random байдлаар асуулт хариулт солих.
 java -jar target/flashcard-1.0-SNAPSHOT.jar --help -> Тусламж
 ## Cards File Format
-
+```
 ```
 # Comments start with #
 Question 1 | Answer 1
